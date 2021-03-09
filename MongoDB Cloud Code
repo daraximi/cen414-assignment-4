@@ -1,0 +1,28 @@
+from pymongo import MongoClient
+
+myclient = MongoClient("mongodb+srv://dbuser:incorrectdarasimi@daraclusterone.7z2za.mongodb.net/test")
+
+mydb = myclient["igr2019"]
+
+mycol = mydb ["igr"]
+
+while True:
+    print("                                       ")
+    print("OLOYEDE OLUWADARASIMI PROMISE 17CJ022535 CEN414")
+    print("IGR PER STATE 2019")
+    print ("Search for State IGR:")
+    deinput = input()
+    search = deinput.upper()
+    myquery = { "STATE": search }
+
+
+
+    mydoc = mycol.find(myquery)
+
+    for x in mydoc:
+        Y = str(x["TOTAL IGR"])
+        print(search + " IGR in 2019, approximately " + Y + " Billion Naira")
+        print("                                       ")
+    res = input("Search Again Y/N:")
+    if res == "N" or res == "n":
+        break
